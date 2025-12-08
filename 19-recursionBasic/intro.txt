@@ -1,0 +1,9 @@
+-> recursion is a method of solving a computational problem where the solution depends on to smaller instances 
+        of the same problem.
+
+-> simply when the function calls itself that's called 'recursion'.
+    
+    - mainly used in Trees, graphs, Dynamic programming
+
+- there is one base case in the recursion which defines the stop point of the recursion which is very important to
+    stop calling, unless it will be infinite calling.

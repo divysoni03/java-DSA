@@ -1,0 +1,88 @@
+// Object - entities in real world (actual implementation)
+// Class -  group of this entities (defines blueprint of object)
+
+// example code :
+public class Demo {
+    public static void main(String[] args) {
+        Pen p1 = new Pen();
+        p1.setColor("blue");
+        p1.setPrice(15.0f);
+
+        System.out.println(p1.color);
+        System.out.println(p1.price);
+    }
+}
+
+class Pen {
+    String color;
+    float price;
+
+    void setColor(String c) {
+        color = c;
+    }
+    void setPrice(float p) {
+        price = p;
+    }
+}
+
+// Access modifiers :
+private, public, default, protected
+
+//Getter & Setters
+Getter - to return a value
+Setter - to set some value
+
+this - this keyword is used to refer to the current object
+
+
+// Encapsulation - defined as wrapping up of data & methods under a single unit. it also implements data hiding.
+    -> simply using access modifiers
+
+// constructor, parametrized constructor, copy constructor
+
+// shallow & deep copy & lazy copy
+
+.
+.
+. basic things (skipped)
+.
+.
+
+//abstract class - 
+    - can't create an instance of an abstract class (can't not create objects)
+    - can have abstract and non abstract methods
+    - can have constructors
+
+
+Note - in any multilevel, inheritance the parents constructor is called first
+ ex., animal -> horse -> mustang , then if we make object of mustang then animal will be called first and then the horse and then the mustang
+
+
+
+//interfaces - is the blueprint of the class
+    used for :
+        -achieve multiple inheritance
+        -achieve total abstraction
+        
+defined with 'interface' keyword
+    properties : 
+        -all methods are public, abstract & without implementation
+        -used to achieve total abstraction
+        -variables in interface are final, public and static
+        -to inherit a interface to a class we use 'implements' keyword, to inherit to another interface we use 'extends' keyword
+
+//static keyword - used to share the same variable or method of a given class 
+    used on : 
+        -properties
+        -functions
+        -blocks
+        -nested classes
+
+//super keyword - used to refer immediate parent class object 
+    -to access parent's properties
+    -to access parent's functions
+    -to access parent's constructors
+
+
+
+NOTE : in java no class can be private and protected, if we do then the class will become unusable
