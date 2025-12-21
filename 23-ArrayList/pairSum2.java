@@ -23,8 +23,9 @@ public class pairSum2 {
             }
             // case 3
             else {
-                if(rpww == 0) rp = nums.size()-1;
-                else rp--;
+                // if(rp == 0) rp = nums.size()-1;
+                // else rp--;
+                rp = (nums.size()+rp-1) % nums.size();
             }
         }
 
