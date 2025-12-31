@@ -1,0 +1,77 @@
+import java.util.Stack;
+
+// add TC: O(1)
+// remove TC: O(n)
+
+public class queueUsingStacks2 {
+    static class Queue{
+        static Stack<Integer> s1 = new Stack<>();
+        static Stack<Integer> s2 = new Stack<>();
+        
+        public boolean isEmpty() {
+            return s1.isEmpty();
+        }
+
+        public void add(int data) {
+            s1.push(data);
+        }
+
+        public int remove() {
+            if(s1.isEmpty()) {
+                System.out.println("Queue is empty.");
+                return -1;
+            }
+
+            // step 1: move s1 elements to s2
+            while(!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+
+            // step 2: add data to s1
+            int val = s2.pop();
+
+            // step 3: move s2 elements to s1
+            while(!s2.isEmpty()) {
+                s1.push(s2.pop());
+            }
+
+            return val;
+        }
+
+        public int peek() {
+            if(s1.isEmpty()) {
+                System.out.println("Queue is empty.");
+                return -1;
+            }
+
+            // step 1: move s1 elements to s2
+            while(!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+
+            // step 2: add data to s1
+            int val = s2.peek();
+
+            // step 3: move s2 elements to s1
+            while(!s2.isEmpty()) {
+                s1.push(s2.pop());
+            }
+
+            return val;
+        }
+    }
+
+    public static void main(String[] args) {
+        Queue q = new Queue();
+
+        q.add(1);
+        q.add(2);
+        q.add(3);
+
+        while(!q.isEmpty()) {
+            System.out.print(q.peek() + " ");
+            q.remove();
+        }
+        System.out.println();
+    }
+}
